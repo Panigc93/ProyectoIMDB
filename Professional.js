@@ -18,12 +18,16 @@ var Professional = /** @class */ (function () {
     }
     //Metodo
     Professional.prototype.print = function () {
-        console.log("Este profesional tiene las siguientes características:" + "\nNombre: " + this.name + "\nEdad: "
+        var retirado = "No";
+        if (this.isRetired == true) {
+            retirado = "Si";
+        }
+        console.log("Este profesional tiene las siguientes características:\n" + "\nNombre: " + this.name + "\nEdad: "
             + this.age + "\nGénero: " + this.genre + "\nPeso: " + this.weight + "\nAltura: "
             + this.height + "\nColor de pelo: " + this.hairColor + "\nColor de ojos: "
-            + this.hairColor + "\nRaza: " + this.race + "\nRetirado: " + this.isRetired +
+            + this.eyeColor + "\nRaza: " + this.race + "\nRetirado: " + retirado +
             "\nNacionalidad: " + this.nationality + "\nCuantos Oscars tiene: " + this.oscarsNumber
-            + "\nProfesión: " + this.profession);
+            + "\nProfesión: " + this.profession + "\n");
     };
     return Professional;
 }());
