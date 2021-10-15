@@ -3,6 +3,7 @@ exports.__esModule = true;
 var Professional_1 = require("./Professional");
 var Movies_1 = require("./Movies");
 var IMDB_1 = require("./IMDB");
+var fs = require("fs");
 var persona1 = new Professional_1.Professional("Peter Martín", 22, "Masculino", 78, 1.81, "Rubio", "Azules", "Blanca", false, "Inglesa", 0, "Actor");
 var persona2 = new Professional_1.Professional("Lucía López", 44, "Femenino", 66, 1.59, "Negro", "Azules", "Blanca", false, "Española", 1, "Actriz");
 var persona3 = new Professional_1.Professional("John Sean", 67, "Masculino", 88, 1.89, "Cataño", "Marrones", "Negra", true, "Estadounidense", 3, "Director");
@@ -35,4 +36,5 @@ pelicula2.producer = "Lions Gate";
 pelicula2.distributor = "HBO";
 var peliculas = [pelicula1, pelicula2];
 var cartelera = new IMDB_1.IMDB(peliculas);
-console.log(cartelera);
+// console.log(cartelera)
+fs.writeFileSync("imdbBBDD.json", JSON.stringify(cartelera));

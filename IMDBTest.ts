@@ -1,6 +1,8 @@
-import { Professional } from "./Professional";
+import { Professional } from './Professional';
 import { Movie } from "./Movies";
 import { IMDB } from "./IMDB";
+import * as fs from "fs";
+
 
 let persona1 = new Professional("Peter Martín", 22, "Masculino", 78, 1.81, "Rubio", "Azules", "Blanca", false, "Inglesa",0,"Actor")
 let persona2 = new Professional("Lucía López", 44, "Femenino", 66, 1.59, "Negro", "Azules", "Blanca", false, "Española",1,"Actriz")
@@ -44,4 +46,8 @@ let peliculas = [pelicula1,pelicula2]
 
 let cartelera = new IMDB(peliculas)
 
-console.log(cartelera)
+// console.log(cartelera)
+
+
+fs.writeFileSync("imdbBBDD.json", JSON.stringify(cartelera))
+
