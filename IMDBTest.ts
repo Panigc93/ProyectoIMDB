@@ -49,5 +49,5 @@ let cartelera = new IMDB(peliculas)
 // console.log(cartelera)
 
 
-fs.writeFileSync("imdbBBDD.json", JSON.stringify(cartelera))
+cartelera.escribirEnFicheroJSON("imdbBBDD.json")
 
